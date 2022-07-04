@@ -1,0 +1,62 @@
+body{
+    background: white;
+    color: rgba(55,0,60,255);
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+h1{
+    color: rgba(55,0,60,255);
+}
+
+.hidden{
+    display: none;
+}
+
+#winner{
+    border: 3px; 
+    border-style: solid; 
+    border-color: gold;
+    width: fit-content;
+}
+
+.championsLine {
+    border-top: 1px solid rgb(4, 4, 175);
+    width: 270px;
+    float: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    clear: both;
+}
+
+.europaLine{
+    border-top: 1px solid rgb(243, 91, 3);
+    width: 270px;
+    float: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.conferenceLine {
+    border-top: 1px dotted rgb(3, 77, 3);
+    width: 270px;
+    float: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.relegation {
+    border: 1px solid red;
+    width: 270px;
+    float: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+br {
+    line-height: 300%;
+ }
+
+ p{
+    margin: 4px;
+ }
