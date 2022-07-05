@@ -1,11 +1,11 @@
 const teams = ['Chelsea', 'Liverpool', 'Manchester City','Arsenal', 'Manchester United', 'Tottenham Hotspur', 'Leicester City', 
 'West Ham','Everton', 'Aston Villa', 'Newcastle United', 'Southampton', 'Brighton', 'Crystal Palace', 'Wolverhampton','Leeds United',
-'Brentford', 'Norwich City', 'Watford', 'Burnley']
+'Brentford', 'Nottingham Forest', 'Fulham', 'Bournemouth']
 
 const powerhouse = ['Chelsea', 'Liverpool', 'Manchester City']
 const challenger = ['Arsenal', 'Manchester United', 'Tottenham Hotspur', 'Leicester City']
 const midtable = ['Aston Villa', 'Brighton', 'Crystal Palace', 'Everton', 'Newcastle United', 'Southampton','West Ham', "Wolverhampton"]
-const survival = [ 'Brentford', 'Burnley', 'Leeds United', 'Norwich City', 'Watford']
+const survival = [ 'Brentford', 'Bournemouth', 'Leeds United', 'Nottingham Forest', 'Fulham']
 
 const matches = 38
 const possibilities = 100
