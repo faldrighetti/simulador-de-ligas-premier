@@ -79,7 +79,7 @@ function placeTeams(){
 Restantes:
 -XXXXOrdenar clubes por puntos de mayor a menor
 -XXXXCrear un div para pasar resultados a texto en la página
--Ver qué pasa si hay igualdad en puntos (lo definiría al azar)
+-XXXXVer qué pasa si hay igualdad en puntos (lo definiría al azar)
 -XXXXHacer algo para limpiar, que NO sea recargar la página. No que borre y vuelva a simular de una, sino que vuelva a cero: Borrar el div
 -Hacer texto para campeón, copas europeas y descenso. Todo a la derecha, con bootstrap. Ejemplo:
 

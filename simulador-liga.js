@@ -34,7 +34,7 @@ function simulatePowerhouse(){
             let result = throwDice()
             if (result <= powerhouseWin){
                 wins++;
-                points +=3;
+                points += 3;
             }
             else if(result > powerhouseWin && result <= powerhouseDraw){
                 draws++;
@@ -124,41 +124,34 @@ function simulateLeague(){
     let arrayPoints = []
 
     for (let i = 0; i < teams.length; i++){
+        let randomNumber1 = throwDice()
         for (let j = 0; j < powerhouse.length; j++){
             if (teams[i] === powerhouse[j]){
                 let amount = simulatePowerhouse()
-                arrayPoints.push([teams[i], amount]);
+                arrayPoints.push([teams[i], amount, randomNumber1]);
             }
         }
         for (let j = 0; j < challenger.length; j++){
             if (teams[i] === challenger[j]){
                 let amount = simulateChallenger()
-                arrayPoints.push([teams[i], amount]);
+                arrayPoints.push([teams[i], amount, randomNumber1]);
             }
         }
         for (let j = 0; j < midtable.length; j++){
             if (teams[i] === midtable[j]){
                 let amount = simulateMidtable()
-                arrayPoints.push([teams[i], amount]);
+                arrayPoints.push([teams[i], amount, randomNumber1]);
             }
         }
         for (let j = 0; j < survival.length; j++){
             if (teams[i] === survival[j]){
                 let amount = simulateSurvival()
-                arrayPoints.push([teams[i], amount]);
+                arrayPoints.push([teams[i], amount, randomNumber1]);
             }
         }
     }
 
-    let finalStandings = arrayPoints.sort(([a, b], [c, d]) => d - b);
+    let finalStandings = arrayPoints.sort(([a, b, c], [d, e, f]) => e - b || f - c);
     return finalStandings;
     
-}
-
-function untie(){
-    let finalStandings = simulateLeague()
-
-    for (let i = 0; i < finalStandings.length; i++){
-
-    }
 }
