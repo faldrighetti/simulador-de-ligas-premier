@@ -14,9 +14,9 @@ const powerhouseWin = 70
 const powerhouseDraw = 85
 const challengerWin = 50
 const challengerDraw = 75
-const midtableWin = 34
-const midtableDraw = 67
-const survivalWin = 25
+const midtableWin = 37
+const midtableDraw = 70
+const survivalWin = 30
 const survivalDraw = 65
 
 function throwDice(){
@@ -127,28 +127,24 @@ function simulateLeague(){
         for (let j = 0; j < powerhouse.length; j++){
             if (teams[i] === powerhouse[j]){
                 let amount = simulatePowerhouse()
-                console.log(teams[i] + ' - ' + amount + ' points.')
                 arrayPoints.push([teams[i], amount]);
             }
         }
         for (let j = 0; j < challenger.length; j++){
             if (teams[i] === challenger[j]){
                 let amount = simulateChallenger()
-                console.log(teams[i] + ' - ' + amount + ' points.')
                 arrayPoints.push([teams[i], amount]);
             }
         }
         for (let j = 0; j < midtable.length; j++){
             if (teams[i] === midtable[j]){
                 let amount = simulateMidtable()
-                console.log(teams[i] + ' - ' + amount + ' points.')
                 arrayPoints.push([teams[i], amount]);
             }
         }
         for (let j = 0; j < survival.length; j++){
             if (teams[i] === survival[j]){
                 let amount = simulateSurvival()
-                console.log(teams[i] + ' - ' + amount + ' points.')
                 arrayPoints.push([teams[i], amount]);
             }
         }
@@ -159,20 +155,10 @@ function simulateLeague(){
     
 }
 
-/*  ESTE BLOQUE DE CÓDIGO SE USA PARA ORDENAR EL ARRAY DE NÚMEROS, PERO QUIERO
-ENTENDER QUÉ HACE ANTES DE MANDARLO AL CÓDIGO
-function compareNumbers(a, b) {
-    return a - b;
-}
-
-console.log(compareNumbers(7,4)) // devuelve 3
-
-*/
-
 function untie(){
-    // En caso de desempate, poner a los equipos igualados en puntos en una lista, hacerles tirar un dado y el más alto va primero.
-    // Porque actualmente, el sistema pone directamente al primero en la lista de equipos, hay que corregir eso
-    // Posible bug: Liverpool y City igualados con 90 puntos, Watford y Norwich igualados con 40. Que no queden los 4 en la misma lista.
-    // Tendría que ser un doble for cuadrático creo, espero que no.
-    // Me conviene un diccionario
+    let finalStandings = simulateLeague()
+
+    for (let i = 0; i < finalStandings.length; i++){
+
+    }
 }
