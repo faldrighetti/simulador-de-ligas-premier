@@ -155,7 +155,6 @@ function simulateLeague(){
     }
 
     let finalStandings = arrayPoints.sort(([a, b], [c, d]) => d - b);
-    console.log(finalStandings)
     return finalStandings;
     
 }
