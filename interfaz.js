@@ -3,7 +3,7 @@ const $deleteButton = document.querySelector('#delete-button')
 
 const finalTable = document.querySelector('#final-standings')
 
-function destroyButton(){ $simulateButton.className = 'hidden' }
+function hideButton(){ $simulateButton.className = 'hidden' }
 
 function createDeleteButton(){ $deleteButton.className = '' }
 
@@ -23,8 +23,9 @@ $simulateButton.onclick = function(){
 
     simulateLeague()
     placeTeams()
-    destroyButton()
+    hideButton()
     createDeleteButton()
+    writeInfo()
 }
 
 function clearPrevious(){
@@ -86,8 +87,63 @@ function placeTeams(){
         finalTable.appendChild(newDiv)
         newDiv.appendChild(nextTeam)
     }
+
+    return finalStandings;
 }
 
+function writeInfo(){
+
+    let finalStandings = simulateLeague()
+
+    const info = document.querySelector('#info-results');
+    info.className = '';
+
+    const leagueWinner = document.querySelector('#league-winner');
+    const championsLeague = document.querySelector('#champions-league');
+    const europaLeague = document.querySelector('#europa-league');
+    const conferenceLeague = document.querySelector('#conference-league');
+    const relegated = document.querySelector('#relegated');
+
+    let first = finalStandings[0][0];
+    let second = finalStandings[1][0];
+    let third = finalStandings[2][0];
+    let fourth = finalStandings[3][0];
+
+    let fifth = finalStandings[4][0];
+    let sixth = finalStandings[5][0];
+    let seventh = finalStandings[6][0];
+
+    let eighteenth = finalStandings[17][0];
+    let nineteenth = finalStandings[18][0];
+    let last = finalStandings[19][0];
+
+    leagueWinner.textContent = 'Winner: ' + first;
+    championsLeague.textContent = 'UEFA Champions League: ' + first + ', ' + second + ', ' + third + ' and ' +  + fourth +'.';
+    europaLeague.textContent = 'UEFA Europa League: ' + fifth + ' and ' + sixth;
+    conferenceLeague.textContent = 'UEFA Conference League: ' + seventh;
+    relegated.textContent = 'Relegated: ' + eighteenth + ', ' + nineteenth + ' and ' + last;
+
+    console.log(first)
+    console.log(second)
+    console.log(third)
+    console.log(fourth)
+    console.log(fifth)
+    console.log(sixth)
+    console.log(seventh)
+    console.log(eighteenth)
+    console.log(nineteenth)
+    console.log(last)
+    // BUG: PARECE QUE HACE OTRA SIMULACIÓN APARTE AL LLAMAR A SIMULATE LEAGUE
+    // TENGO QUE ENCONTRAR LA FORMA DE QUE USE LA MISMA SIMULACIÓN
+
+    // APARTE: VER CÓMO IMPLEMENTAR BOOTSTRAP, ME DESORDENÓ TODO EL CSS AL PONERLO
+
+    info.appendChild(leagueWinner);
+    info.appendChild(championsLeague);
+    info.appendChild(europaLeague);
+    info.appendChild(conferenceLeague);
+    info.appendChild(relegated);
+}
 /*
 Restantes:
 -XXXXOrdenar clubes por puntos de mayor a menor
