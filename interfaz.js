@@ -47,28 +47,36 @@ function placeTeams(){
         const newDiv = document.createElement('div')
         const nextTeam = document.createElement('section')
         nextTeam.textContent = Number(i + 1) + '. ' + finalStandings[i][0] + ' - ' + finalStandings[i][1] + ' points';
-        if(i === 0){
+        if (i === 0){
             nextTeam.id = 'winner'
         }
-        else if(i === 4){
+        else if (i === 4){
             let championsLine = document.createElement('hr')
             championsLine.className = 'championsLine'
+            let brSpace = document.createElement('br')
             newDiv.appendChild(championsLine)
+            newDiv.appendChild(brSpace)
         }
-        else if(i === 6){
+        else if (i === 6){
             let europaLine = document.createElement('hr')
             europaLine.className = 'europaLine'
+            let brSpace = document.createElement('br')
             newDiv.appendChild(europaLine)
+            newDiv.appendChild(brSpace)
         }
-        else if(i === 7){
+        else if (i === 7){
             let conferenceLine = document.createElement('hr')
             conferenceLine.className = 'conferenceLine'
+            let brSpace = document.createElement('br')
             newDiv.appendChild(conferenceLine)
+            newDiv.appendChild(brSpace)
         }
         else if (i === 17){
             let relegation = document.createElement('hr')
             relegation.className = 'relegation'
+            let brSpace = document.createElement('br')
             newDiv.appendChild(relegation)
+            newDiv.appendChild(brSpace)
         }
         finalTable.appendChild(newDiv)
         newDiv.appendChild(nextTeam)

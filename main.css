@@ -22,34 +22,36 @@ h1{
 }
 
 .championsLine {
-    border-top: 1px solid rgb(4, 4, 175);
+    border: 1px solid rgb(4, 4, 175);
     width: 270px;
     float: left;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    clear: both;
 }
 
 .europaLine{
-    border-top: 1px solid rgb(243, 91, 3);
+    border: 1px solid rgb(243, 91, 3);
     width: 270px;
     float: left;
-    margin-top: 0px;
-    margin-bottom: 0px;
 }
 
 .conferenceLine {
-    border-top: 1px dotted rgb(3, 77, 3);
+    border: 1px solid rgb(3, 77, 3);
     width: 270px;
     float: left;
-    margin-top: 0px;
-    margin-bottom: 0px;
 }
 
 .relegation {
     border: 1px solid red;
     width: 270px;
     float: left;
-    margin-top: 0px;
-    margin-bottom: 0px;
+}
+
+footer{
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 1px;
+}
+
+br{
+    margin: 0.5em;
+    line-height:0.5em;
 }
