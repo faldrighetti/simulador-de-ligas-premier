@@ -10,6 +10,14 @@ h1{
     color: rgba(55,0,60,255);
 }
 
+/*#table{
+    float: left;
+}
+
+#info-results{
+    float: right;
+}*/
+
 .hidden{
     display: none;
 }
@@ -43,12 +51,6 @@ h1{
     border: 1px solid red;
     width: 270px;
     float: left;
-}
-
-footer{
-    padding-top: 1px;
-    padding-bottom: 1px;
-    padding-left: 1px;
 }
 
 br{

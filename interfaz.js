@@ -47,7 +47,7 @@ function clearPrevious(){
 
 function placeTeams(){
 
-    let finalStandings = simulateLeague()
+    var finalStandings = simulateLeague()
 
     for (i = 0; i < finalStandings.length; i++){
         const newDiv = document.createElement('div')
@@ -93,7 +93,7 @@ function placeTeams(){
 
 function writeInfo(){
 
-    let finalStandings = simulateLeague()
+    let finalPositions = simulateLeague()
 
     const info = document.querySelector('#info-results');
     info.className = '';
@@ -104,24 +104,22 @@ function writeInfo(){
     const conferenceLeague = document.querySelector('#conference-league');
     const relegated = document.querySelector('#relegated');
 
-    let first = finalStandings[0][0];
-    let second = finalStandings[1][0];
-    let third = finalStandings[2][0];
-    let fourth = finalStandings[3][0];
+    let first = finalPositions[0][0];
+    let second = finalPositions[1][0];
+    let third = finalPositions[2][0];
+    let fourth = finalPositions[3][0];
+    let fifth = finalPositions[4][0];
+    let sixth = finalPositions[5][0];
+    let seventh = finalPositions[6][0];
+    let eighteenth = finalPositions[17][0];
+    let nineteenth = finalPositions[18][0];
+    let last = finalPositions[19][0];
 
-    let fifth = finalStandings[4][0];
-    let sixth = finalStandings[5][0];
-    let seventh = finalStandings[6][0];
-
-    let eighteenth = finalStandings[17][0];
-    let nineteenth = finalStandings[18][0];
-    let last = finalStandings[19][0];
-
-    leagueWinner.textContent = 'Winner: ' + first;
-    championsLeague.textContent = 'UEFA Champions League: ' + first + ', ' + second + ', ' + third + ' and ' +  + fourth +'.';
-    europaLeague.textContent = 'UEFA Europa League: ' + fifth + ' and ' + sixth;
-    conferenceLeague.textContent = 'UEFA Conference League: ' + seventh;
-    relegated.textContent = 'Relegated: ' + eighteenth + ', ' + nineteenth + ' and ' + last;
+    leagueWinner.textContent = `Winner: ${first}.`;
+    championsLeague.textContent = `UEFA Champions League: ${first}, ${second}, ${third} and ${fourth}.`;
+    europaLeague.textContent = `UEFA Europa League: ${fifth} and ${sixth}.`;
+    conferenceLeague.textContent = `UEFA Conference League: ${seventh}.`;
+    relegated.textContent = `Relegated: ${eighteenth}, ${nineteenth} and ${last}.`;
 
     console.log(first)
     console.log(second)

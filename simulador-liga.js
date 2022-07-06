@@ -44,7 +44,7 @@ function simulatePowerhouse(){
                 losses++;
             }
         }
-    return points
+    return points;
 }
 
 function simulateChallenger(){
@@ -68,7 +68,7 @@ function simulateChallenger(){
             losses++;
         }
     }
-    return points
+    return points;
 }
 
 function simulateMidtable(){
@@ -92,7 +92,7 @@ function simulateMidtable(){
             losses++;
         }
     }
-    return points
+    return points;
 }
 
 function simulateSurvival(){
@@ -116,7 +116,7 @@ function simulateSurvival(){
             losses++;
         }
     }
-    return points
+    return points;
 }
 
 function simulateLeague(){
@@ -153,5 +153,4 @@ function simulateLeague(){
 
     let finalStandings = arrayPoints.sort(([a, b, c], [d, e, f]) => e - b || f - c);
     return finalStandings;
-    
 }
