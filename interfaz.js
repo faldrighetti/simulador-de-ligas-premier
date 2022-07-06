@@ -30,12 +30,17 @@ $simulateButton.onclick = function(){
 function clearPrevious(){
     const textTeams = document.querySelectorAll('section')
     const hrLines = document.querySelectorAll('hr')
+    const brSpaces = document.querySelectorAll('br')
 
     for (let i = 0; i < textTeams.length; i++){
         textTeams[i].remove()
     }
     for (let i = 0; i < hrLines.length; i++){
         hrLines[i].remove()
+    }
+    for (let i = 0; i < brSpaces.length; i++){
+        if (brSpaces[i].className !=='initial'){
+        brSpaces[i].remove()}
     }
 }
 

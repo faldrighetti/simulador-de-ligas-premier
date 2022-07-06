@@ -1,6 +1,6 @@
-const teams = ['Chelsea', 'Liverpool', 'Manchester City','Arsenal', 'Manchester United', 'Tottenham Hotspur', 'Leicester City', 
-'West Ham','Everton', 'Aston Villa', 'Newcastle United', 'Southampton', 'Brighton', 'Crystal Palace', 'Wolverhampton','Leeds United',
-'Brentford', 'Nottingham Forest', 'Fulham', 'Bournemouth']
+const teams = ['Chelsea', 'Liverpool', 'Manchester City','Arsenal', 'Manchester United', 'Tottenham Hotspur',
+'Leicester City', 'West Ham','Everton', 'Aston Villa', 'Newcastle United', 'Southampton', 'Brighton', 'Crystal Palace',
+'Wolverhampton','Leeds United', 'Brentford', 'Nottingham Forest', 'Fulham', 'Bournemouth']
 
 const powerhouse = ['Chelsea', 'Liverpool', 'Manchester City']
 const challenger = ['Arsenal', 'Manchester United', 'Tottenham Hotspur', 'Leicester City']
@@ -20,7 +20,7 @@ const survivalWin = 30
 const survivalDraw = 65
 
 function throwDice(){
-    return Math.floor(Math.random() * possibilities) + 1; // dado 1-100
+    return Math.floor(Math.random() * possibilities) + 1; // devuelve número random 1-100
 }
 
 function simulatePowerhouse(){
