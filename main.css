@@ -3,20 +3,32 @@ body{
     color: rgba(55,0,60,255);
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+    width: 70;
 }
 
 h1{
     color: rgba(55,0,60,255);
 }
 
-/*#table{
-    float: left;
+#page{
+    display: flex;
+    flex-direction: row;
 }
 
+#page div{
+    flex: 1;
+}
+
+#table{
+
+/**/}
+
 #info-results{
-    float: right;
-}*/
+    width: 750px;
+    overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-word;
+}
 
 .hidden{
     display: none;

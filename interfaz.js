@@ -25,7 +25,6 @@ $simulateButton.onclick = function(){
     placeTeams()
     hideButton()
     createDeleteButton()
-    writeInfo()
 }
 
 function clearPrevious(){
@@ -43,11 +42,16 @@ function clearPrevious(){
         if (brSpaces[i].className !=='initial'){
         brSpaces[i].remove()}
     }
+
+    const texts = document.querySelectorAll('article')
+    for(let i = 0; i < texts.length; i++){
+        texts[i].textContent = ''
+    }
 }
 
 function placeTeams(){
 
-    var finalStandings = simulateLeague()
+    let finalStandings = simulateLeague()
 
     for (i = 0; i < finalStandings.length; i++){
         const newDiv = document.createElement('div')
@@ -88,6 +92,7 @@ function placeTeams(){
         newDiv.appendChild(nextTeam)
     }
 
+    writeInfo()
     return finalStandings;
 }
 
@@ -121,16 +126,6 @@ function writeInfo(){
     conferenceLeague.textContent = `UEFA Conference League: ${seventh}.`;
     relegated.textContent = `Relegated: ${eighteenth}, ${nineteenth} and ${last}.`;
 
-    console.log(first)
-    console.log(second)
-    console.log(third)
-    console.log(fourth)
-    console.log(fifth)
-    console.log(sixth)
-    console.log(seventh)
-    console.log(eighteenth)
-    console.log(nineteenth)
-    console.log(last)
     // BUG: PARECE QUE HACE OTRA SIMULACIÓN APARTE AL LLAMAR A SIMULATE LEAGUE
     // TENGO QUE ENCONTRAR LA FORMA DE QUE USE LA MISMA SIMULACIÓN
 
