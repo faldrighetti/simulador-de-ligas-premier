@@ -20,7 +20,7 @@ const survivalWin = 25
 const survivalDraw = 65
 
 function throwDice(){
-    return Math.floor(Math.random() * possibilities) + 1; // devuelve número random 1-100
+    return Math.floor(Math.random() * possibilities) + 1;
 }
 
 function simulatePowerhouse(){

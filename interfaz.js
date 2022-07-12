@@ -126,22 +126,3 @@ function placeTeams(){
 
     return finalStandings;
 }
-
-/*
-Restantes:
--XXXXOrdenar clubes por puntos de mayor a menor
--XXXXCrear un div para pasar resultados a texto en la página
--XXXXVer qué pasa si hay igualdad en puntos (lo definiría al azar)
--XXXXHacer algo para limpiar, que NO sea recargar la página. No que borre y vuelva a simular de una, sino que vuelva a cero: Borrar el div
--Hacer texto para campeón, copas europeas y descenso. Todo a la derecha, con bootstrap. Ejemplo:
-
-1-Liverpool, 100                    Winner: Liverpool
-2-Manchester City, 95               UEFA Champions League: Liverpool, Manchester City, Chelsea
-3-Chelsea, 81                       and Arsenal
-4-Arsenal, 75                       UEFA Europa League: Manchester United and Tottenham
-5-Manchester United, 73             UEFA Conference League: Leicester City
-6-Tottenham, 71                     Relegation: Burnley, Watford and Norwich City
-7-Leicester City, 67
-...
-20-Norwich City, 31
-*/
