@@ -1,10 +1,10 @@
 const teams = ['Chelsea', 'Liverpool', 'Manchester City','Arsenal', 'Manchester United', 'Tottenham Hotspur',
-'Leicester City', 'West Ham','Everton', 'Aston Villa', 'Newcastle United', 'Southampton', 'Brighton', 'Crystal Palace',
+'Leicester City', 'West Ham United','Everton', 'Aston Villa', 'Newcastle United', 'Southampton', 'Brighton', 'Crystal Palace',
 'Wolverhampton','Leeds United', 'Brentford', 'Nottingham Forest', 'Fulham', 'Bournemouth']
 
 const powerhouse = ['Chelsea', 'Liverpool', 'Manchester City']
 const challenger = ['Arsenal', 'Manchester United', 'Tottenham Hotspur', 'Leicester City']
-const midtable = ['Aston Villa', 'Brighton', 'Crystal Palace', 'Everton', 'Newcastle United', 'Southampton','West Ham', "Wolverhampton"]
+const midtable = ['Aston Villa', 'Brighton', 'Crystal Palace', 'Everton', 'Newcastle United', 'Southampton','West Ham United', "Wolverhampton"]
 const survival = [ 'Brentford', 'Bournemouth', 'Leeds United', 'Nottingham Forest', 'Fulham']
 
 const matches = 38
@@ -14,9 +14,9 @@ const powerhouseWin = 70
 const powerhouseDraw = 85
 const challengerWin = 50
 const challengerDraw = 75
-const midtableWin = 37
-const midtableDraw = 70
-const survivalWin = 30
+const midtableWin = 33
+const midtableDraw = 67
+const survivalWin = 25
 const survivalDraw = 65
 
 function throwDice(){
@@ -30,20 +30,20 @@ function simulatePowerhouse(){
     let losses = 0
     let points = 0
 
-        for (let i = 0; i < matches; i++){
-            let result = throwDice()
-            if (result <= powerhouseWin){
-                wins++;
-                points += 3;
-            }
-            else if(result > powerhouseWin && result <= powerhouseDraw){
-                draws++;
-                points++;
-            }
-            else{
-                losses++;
-            }
+    for (let i = 0; i < matches; i++){
+        let result = throwDice()
+        if (result <= powerhouseWin){
+            wins++;
+            points += 3;
         }
+        else if(result > powerhouseWin && result <= powerhouseDraw){
+            draws++;
+            points++;
+        }
+        else{
+            losses++;
+        }
+    }
     return points;
 }
 
@@ -119,6 +119,8 @@ function simulateSurvival(){
     return points;
 }
 
+let arrayTotal = []
+
 function simulateLeague(){
 
     let arrayPoints = []
@@ -152,5 +154,6 @@ function simulateLeague(){
     }
 
     let finalStandings = arrayPoints.sort(([a, b, c], [d, e, f]) => e - b || f - c);
+    arrayTotal = finalStandings
     return finalStandings;
 }

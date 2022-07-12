@@ -10,24 +10,16 @@ h1{
     color: rgba(55,0,60,255);
 }
 
-#page{
-    display: flex;
-    flex-direction: row;
-}
-
-#page div{
-    flex: 1;
-}
-
 #table{
-
-/**/}
+    display: table;
+    width: 400px;
+}
 
 #info-results{
-    width: 750px;
-    overflow-wrap: break-word;  
-    word-wrap: break-word; 
-    word-break: break-word;
+    display: inline-block;
+    height: auto;
+    width: 700px;
+    word-wrap: break-word;
 }
 
 .hidden{

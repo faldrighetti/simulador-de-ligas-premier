@@ -47,11 +47,17 @@ function clearPrevious(){
     for(let i = 0; i < texts.length; i++){
         texts[i].textContent = ''
     }
+
+    const textInfo = document.querySelectorAll('.textInfo')
+    for(let i = 0; i < textInfo.length; i++){
+        textInfo[i].remove()
+    }
 }
 
 function placeTeams(){
 
     let finalStandings = simulateLeague()
+    const info = document.querySelector('#info-results');
 
     for (i = 0; i < finalStandings.length; i++){
         const newDiv = document.createElement('div')
@@ -59,6 +65,16 @@ function placeTeams(){
         nextTeam.textContent = Number(i + 1) + '. ' + finalStandings[i][0] + ' - ' + finalStandings[i][1] + ' points';
         if (i === 0){
             nextTeam.id = 'winner'
+            const winner = document.createElement('div')
+            winner.className = 'textInfo'
+            winner.textContent = 'Winner: ' + finalStandings[i][0]
+            info.appendChild(winner)
+        }
+        else if (i === 3){
+            const championsLeague = document.createElement('div')
+            championsLeague.className = 'textInfo'
+            championsLeague.textContent = 'UEFA Champions League: ' + finalStandings[i-3][0] + ', ' + finalStandings[i-2][0] + ', ' + finalStandings[i-1][0] + ' and '+ finalStandings[i][0]+'.'
+            info.appendChild(championsLeague)
         }
         else if (i === 4){
             let championsLine = document.createElement('hr')
@@ -67,7 +83,17 @@ function placeTeams(){
             newDiv.appendChild(championsLine)
             newDiv.appendChild(brSpace)
         }
+        else if (i === 5){
+            const europaLeague = document.createElement('div')
+            europaLeague.className = 'textInfo'
+            europaLeague.textContent = 'UEFA Europa League: ' + finalStandings[i-1][0] + ' and '+ finalStandings[i][0]+'.'
+            info.appendChild(europaLeague)
+        }
         else if (i === 6){
+            const conferenceLeague = document.createElement('div')
+            conferenceLeague.className = 'textInfo'
+            conferenceLeague.textContent = 'UEFA Conference League: ' + finalStandings[i][0]+'.'
+            info.appendChild(conferenceLeague)
             let europaLine = document.createElement('hr')
             europaLine.className = 'europaLine'
             let brSpace = document.createElement('br')
@@ -82,61 +108,25 @@ function placeTeams(){
             newDiv.appendChild(brSpace)
         }
         else if (i === 17){
-            let relegation = document.createElement('hr')
-            relegation.className = 'relegation'
+            let relegationLine = document.createElement('hr')
+            relegationLine.className = 'relegation'
             let brSpace = document.createElement('br')
-            newDiv.appendChild(relegation)
+            newDiv.appendChild(relegationLine)
             newDiv.appendChild(brSpace)
+        }
+        else if (i === 19){
+            const relegated = document.createElement('div')
+            relegated.className = 'textInfo'
+            relegated.textContent = 'Relegated: ' + finalStandings[i-2][0] + ', ' + finalStandings[i-1][0] + ' and '+ finalStandings[i][0]+'.'
+            info.appendChild(relegated)
         }
         finalTable.appendChild(newDiv)
         newDiv.appendChild(nextTeam)
     }
 
-    writeInfo()
     return finalStandings;
 }
 
-function writeInfo(){
-
-    let finalPositions = simulateLeague()
-
-    const info = document.querySelector('#info-results');
-    info.className = '';
-
-    const leagueWinner = document.querySelector('#league-winner');
-    const championsLeague = document.querySelector('#champions-league');
-    const europaLeague = document.querySelector('#europa-league');
-    const conferenceLeague = document.querySelector('#conference-league');
-    const relegated = document.querySelector('#relegated');
-
-    let first = finalPositions[0][0];
-    let second = finalPositions[1][0];
-    let third = finalPositions[2][0];
-    let fourth = finalPositions[3][0];
-    let fifth = finalPositions[4][0];
-    let sixth = finalPositions[5][0];
-    let seventh = finalPositions[6][0];
-    let eighteenth = finalPositions[17][0];
-    let nineteenth = finalPositions[18][0];
-    let last = finalPositions[19][0];
-
-    leagueWinner.textContent = `Winner: ${first}.`;
-    championsLeague.textContent = `UEFA Champions League: ${first}, ${second}, ${third} and ${fourth}.`;
-    europaLeague.textContent = `UEFA Europa League: ${fifth} and ${sixth}.`;
-    conferenceLeague.textContent = `UEFA Conference League: ${seventh}.`;
-    relegated.textContent = `Relegated: ${eighteenth}, ${nineteenth} and ${last}.`;
-
-    // BUG: PARECE QUE HACE OTRA SIMULACIÓN APARTE AL LLAMAR A SIMULATE LEAGUE
-    // TENGO QUE ENCONTRAR LA FORMA DE QUE USE LA MISMA SIMULACIÓN
-
-    // APARTE: VER CÓMO IMPLEMENTAR BOOTSTRAP, ME DESORDENÓ TODO EL CSS AL PONERLO
-
-    info.appendChild(leagueWinner);
-    info.appendChild(championsLeague);
-    info.appendChild(europaLeague);
-    info.appendChild(conferenceLeague);
-    info.appendChild(relegated);
-}
 /*
 Restantes:
 -XXXXOrdenar clubes por puntos de mayor a menor
