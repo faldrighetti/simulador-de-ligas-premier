@@ -12,13 +12,14 @@ h1{
 
 #table{
     display: table;
-    width: 400px;
+    width: 40%;
+    float: left;
 }
 
 #info-results{
-    display: inline-block;
-    height: auto;
-    width: 700px;
+    display: table;
+    float: right;
+    width: 50%;
     word-wrap: break-word;
 }
 
